@@ -1,0 +1,40 @@
+==Asset==
+	Id
+	Name
+	Ownership
+	Metadata
+		key=>value
+
+==Batch==
+	Id
+	Sender
+	Distributor
+	Receiver
+	ShipReward
+	TokenReward
+	AssetList[]
+	Status
+	SenderTime
+	LogisticReceiveTime
+	LogisticSendTime
+	ReceiveTime
+	
+==Track==
+	Id
+	AssetId
+	Ownership
+	Time
+	Action
+	Remark
+
+//Asset actions
+public string CreateAsset(string Name, string[] keys, string[] values);
+public string CreateBatch(address transporter, address receiver, uint shipReward, uint tokenReward, string[] assetList);
+public string SendBatch(string address);
+public string ReceiveBatch();
+public Track[] GetAssetTrack(string assetId);
+public Asset[] GetAssetList();
+
+//Token actions
+public void SendToken(address receiver, uint amount);
+public void GetBalance()
